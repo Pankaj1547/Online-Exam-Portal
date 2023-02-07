@@ -11,8 +11,10 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 	<style type="text/css">
+	
 	.container{
-	background-image: linear-gradient(violet,yellow);
+	background-image: linear-gradient(#00ab41,#00ab41);
+	border: 5px solid #555;
 	width:400px;
 	height: 500px;
 	
@@ -24,63 +26,68 @@
 	top: -50px;
 	font-style: Arial;
 }
+center{
+	/* padding: 50px;
+	font-size: 20px;
+	position: relative;
+	top: -50px; */
+	font-style: oblique;
+}
 .con{
 	margin: 50px;
 	position: relative;
-	left: 400px;
+	left: 300px;
+	/* top:30px; */
 	overflow: hidden;
-  background-image: url("sunset.jpg");
-  width: 100%;
-	height: 100%;
+    background-image: url("27.jpg");
+  
+    /* width: 100%;
+	height: 100%; */
 	}
 }
 </style>
 </head>
+
 <body class="con">
 <div  class="container"> 
-<h1>Exam Questions</h1>
+
+
 <form action="exam" method="get" class="one">
-<%  HttpSession sess=request.getSession();
-		
-	%>
-<% if(sess.getAttribute("subject1").equals("php")){ %>
 
-<h1>${subject1}</h1>
-<% } %>
-<% if(sess.getAttribute("subject2").equals("Python")){ %>
-
-<h1>${subject2}</h1>
-<% } %>
-<% else if(sess.getAttribute("subject3").equals("asp.net")){ %>
-
-<h1>${subject3}</h1>
-<% } %>
-<% if(sess.getAttribute("subject").equals("sql")){ %>
-
-<h1>${subject4}</h1>
-<% } %>
-
-<br>
+<center>
+<h1>Exam Questions</h1>
+<label>Enter subject </label>
+<input type="text" name="sub" value="${name}" readonly="readonly">
+<br><br>
 <label>Question </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="Qno">
-<br>
+<br><br>
 <label>Option1 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="one">
-<br>
+<br><br>
 <label>Option2 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="two">
-<br>
+<br><br>
 <label>Option3 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="three">
-<br>
+<br><br>
 <label>Option4 </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="four">
-<br>
+<br><br>
 <label>Answer </label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="ans">
-<br>
-<input type="submit" value="Submit" style="font-size: 30px;font-style:inherit;">
-<button><a href="search.jsp" style="font-size: 30px;font-style:inherit;">Search</a></button>
+<br><br>
+
+
+
+<input type="submit" value="Submit" style="
+	font-size:30px;
+	font-style:italic;
+">
+
+<button><a href="search.jsp" style="font-size: 30px;font-style:italic;">Search</a></button>
+
+</center>
 </form>
 </div>
 </body>

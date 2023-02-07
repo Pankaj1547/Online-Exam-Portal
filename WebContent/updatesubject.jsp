@@ -15,7 +15,7 @@
 	<title></title>
 	<style type="text/css">
 	.container{
-	background-image: linear-gradient(red,yellow);
+	background-image: linear-gradient(#E8BEAC,#E8BEAC);
 	width:400px;
 	height: 500px;
 	
@@ -48,7 +48,7 @@ body {
   animation-name: example;
   animation-duration: 4s;
   animation-iteration-count:infinite;
-  background-image: url("one.jpg");
+  background-image: url("8.jpg");
 }	
 	</style>
 	</head>

@@ -257,4 +257,44 @@
     <servlet-name>UserUpdate</servlet-name>
     <url-pattern>/UserUpdate</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>validatecaptcha</display-name>
+    <servlet-name>validatecaptcha</servlet-name>
+    <servlet-class>validatecaptcha</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>validatecaptcha</servlet-name>
+    <url-pattern>/validatecaptcha</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CaptchaServlet</display-name>
+    <servlet-name>CaptchaServlet</servlet-name>
+    <servlet-class>CaptchaServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CaptchaServlet</servlet-name>
+    <url-pattern>/CaptchaServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewAdmin</display-name>
+    <servlet-name>ViewAdmin</servlet-name>
+    <servlet-class>ViewAdmin</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAdmin</servlet-name>
+    <url-pattern>/ViewAdmin</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Mail_PDF</display-name>
+    <servlet-name>Mail_PDF</servlet-name>
+    <servlet-class>Mail_PDF</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Mail_PDF</servlet-name>
+    <url-pattern>/Mail_PDF</url-pattern>
+  </servlet-mapping>
 </web-app>

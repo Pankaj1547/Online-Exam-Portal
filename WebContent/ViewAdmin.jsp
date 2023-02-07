@@ -3,6 +3,7 @@
 <%@page import="java.util.*"%>
 <%@page import="javax.swing.*"%>
 <%@page import="java.lang.*"%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
@@ -10,6 +11,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
 	<style type="text/css">
 	
 .one{
@@ -43,13 +45,52 @@
 	width:400px;
 	height: 200px;
 }
+
 </style>
+
+
 </head>
-<body class="con" >
-<div class="container">
- <form action="findsubject" method="get" class="one">
-<label>S_id</label>
-<input type="text" name="sname">
+<body class="con">
+
+<!-- <div class="container">
+<form action="ViewAdmin" method="get" class="one">
+<center>
+<h1>view Profile</h1>
+<label>A_id</label>
+<input type="text" name="aid" value=${A_id}>
+<br><br>
+<label>Name</label>
+<input type="text" name="aname" value=${name}>
+<br><br>
+<label>pass</label>
+<input type="text" name="apass" value=${pass}>
+<br><br>
+
+<label>Confirmpass</label>
+<input type="text" name="aconfirmpass" value=${pass}>
+<br><br>
+
+<label>email</label>
+<input type="text" name="aemail" value=${email}><br><br>
+<label>Phone no</label>
+
+<input type="text" name="aphone" value=${phone}>
+<br><br>
+<label>ExamId</label>
+<input type="text" name="aexam" value=${exam}>
+<br><br>
+
+<br><br>
+<input type="submit" value="update" class="btn">
+</center>
+</form>
+</div>
+ -->
+ 
+ <div class="container">
+ <form action="ViewAdmin" method="get" class="one">
+<label>A_id</label>
+<input type="text" name="aname">
 <br>
 <input type="submit" value="search" style="
 	font-size:30px;
@@ -57,6 +98,6 @@
 	position: relative; 
 	left: 100px;">
 </form>
-</div>
+
 </body>
 </html>

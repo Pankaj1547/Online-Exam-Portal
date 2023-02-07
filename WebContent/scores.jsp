@@ -54,7 +54,7 @@ body {
 		rs = st.executeQuery();
 		%>
 		<form  class="form" action="scores" method="get">
-		<input type="text" name="uid"><br><br><br>
+		<br><br><br>
 		<% 
 		while (rs.next()) {
 			i=i+1;

@@ -13,9 +13,9 @@
 	<title></title>
 	<style type="text/css">
 	.container{
-	background-image: linear-gradient(green,white);
+	background-image: linear-gradient(	#E8BEAC,	#E8BEAC);
 	width:400px;
-	height: 500px;
+	height: 300px;
 	
 }
 center{
@@ -27,12 +27,20 @@ center{
 }
 .con{
 	margin: 50px;
+	top :100
 	position: relative;
 	left: 400px;
+/* 	background-color:red; */
 	overflow: hidden;
-	width: 100px;
-  height: 100px;
-  background-image: url("three.jpg"); 
+ 
+  background-image: url("8.jpg") ;
+ /* background-size:500px; */ 
+  background-size:cover;
+  
+  background-repeat:no-repeat;
+ 
+  width:600px;
+	height: 800px;
   
 	}
 }

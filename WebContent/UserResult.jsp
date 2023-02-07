@@ -10,6 +10,9 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+
+
+
 </head>
 <body>
 <%! Connection con;PreparedStatement st;
@@ -39,6 +42,7 @@ ResultSet rs;
 <input value="<%=rs.getString(2) %>" readonly="readonly" name="name<%=i %>" style="border: 0px;padding: 10px">
 <input value="<%=rs.getString(3) %>" readonly="readonly" name="score<%=i %>" style="border: 0px;padding: 10px">
 <input type="submit" value="View PDF">
+<a href="Mail_PDF">Mail PDF</a>
 <br>
 </c:forEach>
 <%
@@ -51,6 +55,7 @@ i++;
 	}
 %>
 </form>
+
 
 </body>
 </html>

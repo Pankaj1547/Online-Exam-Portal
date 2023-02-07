@@ -15,9 +15,9 @@
 	<title></title>
 <style type="text/css">
 	.container{
-	background-image: linear-gradient(orange,yellow);
+	background-image: linear-gradient(#E8BEAC,#E8BEAC);
 	width:400px;
-	height: 500px;
+	height: 350px;
 	
 }
 center{
@@ -28,13 +28,17 @@ center{
 	font-style: oblique;
 }
 .con{
-	margin: 50px;
-	position: relative;
-	left: 400px;
-	overflow: hidden;
-	width: 100px;
-  height: 100px;
-  background-image: url("four.jpg"); 
+  margin: 50px;
+  top :100
+  position: relative;
+  left: 400px;
+/* 	background-color:red; */
+  overflow: hidden;
+  background-image: url("8.jpg") ;
+  background-size:cover;
+  background-repeat:no-repeat;
+  width:600px;
+  height: 800px;
   
 	}
 }
@@ -47,23 +51,23 @@ center{
 <form action="insertsubject" method="get" class="one">
 <center>
 <h1>Insert Data</h1>
-<label>S_id</label>
+<label>S_Id</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="sname">
 
 
 <br><br>
 
-<label>Name</label>
+<label>Name</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="name">
 <br><br>
-<label>date</label>
+<label>Date</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="type" name="da">
 <br><br>
 
-<label>time</label>
+<label>Time</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <input type="text" name="txt">
 <br><br>
-<input type="submit" value="save" style="
+<input type="submit" value="Save" style="
 	font-size:30px;
 	font-style:italic;
 ">

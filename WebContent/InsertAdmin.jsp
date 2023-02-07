@@ -7,6 +7,7 @@
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@page import="com.captcha.botdetect.web.servlet.Captcha"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +64,7 @@
 						</nav>
 						<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
 							<div class="tab-pane fade show active" id="nav-login" role="tabpanel" aria-labelledby="nav-login-tab">
-								<form class="form-login-signup" action="loginadmin" method="get">
+								<form class="form-login-signup" method="post">
 								
 								<div class="form-label-group">
 										<input type="text" id="inputEmail" name="username" class="form-control" placeholder="Email address" required autofocus>
@@ -79,10 +80,38 @@
 										<input type="password" id="pass" class="form-control" placeholder="Password" required name="pass">
 										<label for="pass">Password</label>
 									</div>
-									<button class="btn btn-lg btn-primary btn-color-hover btn-block text-uppercase" type="submit">Login</button>
-									<hr class="my-4">
+<%
+int s=0;
+Captcha captcha = Captcha.load(request, "exampleCaptcha");
+captcha.setUserInputID("captchaCode");
+String captchaHtml = captcha.getHtml();
+out.write(captchaHtml);
+%>
+<input type="text" name="captchaCode" id="captchaCode">
+<input type="text" value="<%=s %>" hidden="true" name="check">
 									
+									<input type="submit" value="submit">
+									<hr class="my-4">
 								</form>
+<%
+  if ("POST".equalsIgnoreCase(request.getMethod())) {
+     // validate the Captcha to check we're not dealing with a bot
+     boolean isHuman = captcha.validate(request.getParameter("captchaCode"));
+     System.out.println("Post is working");
+     if (isHuman) {
+      s++;
+      RequestDispatcher rd=request.getRequestDispatcher("loginadmin");  
+      rd.forward(request, response);
+     } 
+     else{
+      s=0;
+      System.out.println("S is 0");
+     }
+  }
+  else{
+	  System.out.println("Post not working");
+  }
+%>
 							</div>
 							<div class="tab-pane fade" id="nav-signup" role="tabpanel" aria-labelledby="nav-signup-tab">
 								<form class="form-login-signup" action="InsertAdmin" method="get">
@@ -128,48 +157,6 @@
 	</div>
 </div>
 
-<%-- <%! 
-
-Connection con;PreparedStatement st;									
-int n=(int)Math.ceil((Math.random()*10000));
-
-%>
-
-<%
-	System.out.println(n);
-	String a1=request.getParameter("uname");
-	String a3=request.getParameter("upass");
-	String a2=request.getParameter("uemail");
-	String a4=request.getParameter("uphone");
-	String a5=request.getParameter("uexam");
-	
-	System.out.println(a1);
-	System.out.println(a2);
-	System.out.println(a3);
-	System.out.println(a4);
-	System.out.println(a5);
-	
-	
-	
-	try {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","manager");
-	String sql="insert into users values(?,?,?,?,?,?)";
-	st=con.prepareStatement(sql);
-	st.setString(1,"E"+String.valueOf(n));
-	st.setString(2,a1);
-	st.setString(3,a2);
-	st.setString(4,a3);
-	st.setString(5,a4);
-	st.setString(6,a5);
-	
-	int g=st.executeUpdate();
-	con.close();
-}
-catch (Exception e2) {
-	System.out.println(e2.toString());
-}
-%> --%>
 <!-- jquery latest version -->
 <script src="js/jquery.min.js"></script>
 <!-- popper.min.js -->

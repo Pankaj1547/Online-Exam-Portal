@@ -32,7 +32,7 @@
     <a href="#menu" class="menu-link"><i class="fa fa-bars"></i></a>
     <nav id="menu" class="main-nav" role="navigation">
       <ul class="main-menu">
-        <li><a href="admindash.jsp">Home</a></li>
+        <li><a href="userAfterLogin.jsp">Home</a></li>
         <!-- <li class="has-submenu"><a href="#section2">About Us</a> -->
           <li><a href="aboutus.jsp">About us</a></li>
         
@@ -41,14 +41,7 @@
             <li><a href="https://templatemo.com/about" rel="sponsored" class="external">External URL</a></li>
           </ul> -->
         </li>
-        <li class="has-submenu"><a href="#section2">Exams</a>
-        <ul class="sub-menu">
-     
-          <li><a href="" rel="sponsored" class="external">Java</a></li>
-          <li><a href="" rel="sponsored" class="external">Python</a></li>
-          <li><a href="" rel="sponsored" class="external">Node.js</a></li>
-        <!-- <li><a href="#section5">Video</a></li> -->
-      </ul>
+        
         <li><a href="contact_us.jsp">Contact</a></li>
        <li><a href="userdash.jsp">Dashboard</a></li>
         <li class="has-submenu"><a href="homepage.jsp">Logout</a>

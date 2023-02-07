@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,8 +8,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfWriter;
 
@@ -73,17 +69,16 @@ public class TryPDF extends HttpServlet {
   
             Document document = new Document();
   
-            PdfWriter.getInstance(
-                document, response.getOutputStream());
+            PdfWriter.getInstance(document, response.getOutputStream());
   
             document.open();
-  
             document.add(new Paragraph("User ID :"+uid));
             document.add(new Paragraph("Name :"+name));
             document.add(new Paragraph("Score :"+score));
             document.add(new Paragraph("Email :"+email));
             document.add(new Paragraph("Phone Number :"+p_no));
             document.add(new Paragraph("Exam ID :"+examid));
+            
   
             document.close();
         }

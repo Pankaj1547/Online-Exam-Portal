@@ -63,12 +63,7 @@
 				</h3>
 			</a>
 			<div class="d-flex align-items-center ms-4 mb-4">
-				<div class="position-relative">
-					<img class="rounded-circle" src="img/ronak.jpg" alt=""
-						style="width: 40px; height: 40px;">
-					<div
-						class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1"></div>
-				</div>
+				
 				<div class="ms-3">
 					<h6 class="mb-0">${username}</h6>
 					<span>Admin</span>
@@ -94,8 +89,7 @@
 						<a href="insertsubject.jsp" class="dropdown-item">Insert
 							Subject</a> <a href="findsubject.jsp" class="dropdown-item">Update
 							Subject</a> <a href="deletesubject.jsp" class="dropdown-item">Delete
-							Subject</a> <a href="viewsubject.jsp" class="dropdown-item">View
-							Subject</a>
+							Subject</a> 
 					</div>
 				</div>
 				<%!Connection con;
@@ -115,17 +109,13 @@
 						data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Add
 						Exam Ques</a>
 					<div class="dropdown-menu bg-transparent border-0">
-					<%! int i=0;
-					  %>
 					<%
-					HttpSession sess=request.getSession();
-					while(rs.next()){
-						i=i+1;
-						sess.setAttribute("subject"+String.valueOf(i),rs.getString(1));
-						
+					while(rs.next()){	
 						%>
-						<a href="exam.jsp" class="dropdown-item" name="ones"><%=rs.getString(1)%></a> 
-						
+						<form action=" exam.jsp" method="get">
+						<input type="submit" name="ones" value="<%=rs.getString(1)%>" style="border: none"> 
+						</form>	
+					
 						<% } 				
 					
 					con.close();
@@ -134,7 +124,8 @@
 				}
 				
 				%>
-				</div>
+						
+								</div>
 			</div>
 			<div class="nav-item dropdown">
 					<a href="#" class="nav-link dropdown-toggle"

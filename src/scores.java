@@ -30,7 +30,8 @@ public class scores extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 		PrintWriter pw=response.getWriter();
-		String u_id=request.getParameter("uid");
+		HttpSession sess=request.getSession();
+		String u_id=String.valueOf(sess.getAttribute("userid"));
 		System.out.println(u_id);
 		String [] answers= {"ans1","ans2","ans3","ans4","ans5"};
 		for (int i=0;i<5;i++) {
@@ -60,7 +61,6 @@ public class scores extends HttpServlet {
 	}	
 	int p=0;
 		while (rs.next()) {
-			
 			if (rs.getString(1).equals(answers[p])) {
 				score=score+1;
 				try {
@@ -76,12 +76,11 @@ public class scores extends HttpServlet {
 					st2.setString(2,u_id);
 					int g1=st2.executeUpdate();
 					con1.close();
-					pw.print("record updated");
+					
 				} catch (Exception e2) {
 					System.out.println(e2.toString());
 					pw.print("record failed");	
 				}
-				
 			}
 			else {
 				System.out.println("wrong");
@@ -94,7 +93,7 @@ public class scores extends HttpServlet {
 	catch (Exception e2) {
 		System.out.println(e2.toString());
 	}	
-	
+		response.sendRedirect("userdash.jsp");
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

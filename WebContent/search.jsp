@@ -10,13 +10,37 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
+<style type="text/css">
+body{
+background-image: url("90.jpg");
+}
+.dash{
+background-image: linear-gradient(#f3e7d3,#f3e7d3);
+	width:500px;
+	height: 250px;
+	margin: 50px;
+	padding:20px;
+	position: relative;
+	left: 400px;
+	overflow: hidden;
+	font-size: 30px; 
+}
+.in{
+font-size: 20px;
+}
+.btn{
+font-size: 30px;
+position: relative;
+left: 200px;
+}
+</style>
 </head>
 <body>
-<form action="searchone.jsp" method="get">
+<form action="searchone.jsp" method="get" class="dash">
 <label>Enter Subject</label>
-<input type="text" name="num">
-<br>
-<input type="submit" value="Search">
+<input type="text" name="num" class="in">
+<br><br>
+<input type="submit" value="Search" class="btn">
 </form>
 </body>
 </html>

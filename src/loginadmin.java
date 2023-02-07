@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.captcha.botdetect.web.servlet.Captcha;
+
 /**
  * Servlet implementation class loginadmin
  */
@@ -37,6 +39,8 @@ public class loginadmin extends HttpServlet {
 		   String password=request.getParameter("pass");
 		   String a_id=request.getParameter("a_id");
 		   
+		   System.out.println("Login Admin Working");
+		   
 		   HttpSession session =request.getSession();
 		   session.setAttribute("username",username);
 		   
@@ -59,8 +63,7 @@ public class loginadmin extends HttpServlet {
 		catch (Exception e) {
 			System.out.println(e.toString());
 		}
-		
-	}
+	 }
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

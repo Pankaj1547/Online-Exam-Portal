@@ -108,48 +108,6 @@
 	</div>
 </div>
 
-<%-- <%! 
-
-Connection con;PreparedStatement st;									
-int n=(int)Math.ceil((Math.random()*10000));
-
-%>
-
-<%
-	System.out.println(n);
-	String a1=request.getParameter("uname");
-	String a3=request.getParameter("upass");
-	String a2=request.getParameter("uemail");
-	String a4=request.getParameter("uphone");
-	String a5=request.getParameter("uexam");
-	
-	System.out.println(a1);
-	System.out.println(a2);
-	System.out.println(a3);
-	System.out.println(a4);
-	System.out.println(a5);
-	
-	
-	
-	try {
-		Class.forName("oracle.jdbc.driver.OracleDriver");
-		con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","manager");
-	String sql="insert into users values(?,?,?,?,?,?)";
-	st=con.prepareStatement(sql);
-	st.setString(1,"E"+String.valueOf(n));
-	st.setString(2,a1);
-	st.setString(3,a2);
-	st.setString(4,a3);
-	st.setString(5,a4);
-	st.setString(6,a5);
-	
-	int g=st.executeUpdate();
-	con.close();
-}
-catch (Exception e2) {
-	System.out.println(e2.toString());
-}
-%> --%>
 <!-- jquery latest version -->
 <script src="js/jquery.min.js"></script>
 <!-- popper.min.js -->
